@@ -1,3 +1,4 @@
+package clases;
 import java.util.Iterator;
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
