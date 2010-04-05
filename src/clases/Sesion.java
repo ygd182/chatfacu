@@ -1,3 +1,4 @@
+package clases;
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
 
@@ -22,7 +23,7 @@ public class Sesion {
 	
 	public void acceder(Usuario usu){
 		String nombre = usu.getNombre();
-		usuario = new Usuario(nombre,nombre);
+//		usuario = new Usuario(nombre,nombre);
 		try {
 			conexion.getAccountManager().createAccount (nombre,nombre);
 			System.out.println("Usuario creado");

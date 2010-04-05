@@ -1,3 +1,4 @@
+package clases;
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
 
