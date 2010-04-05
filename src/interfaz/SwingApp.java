@@ -2,6 +2,7 @@ package interfaz;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Event;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -143,7 +144,6 @@ public class SwingApp extends javax.swing.JFrame {
 								public void actionPerformed(ActionEvent e)
 								{
 									 sesion = frm_servidor.getSesion();
-									 System.out.println("sesion4: "+sesion);
 									 user =  new login(sesion);									 
 									 user.show();
 						
@@ -201,7 +201,8 @@ public class SwingApp extends javax.swing.JFrame {
     public JDialog getDialog(){
     	return d1;
     }
-	
+  
+
 	private void logoutItemActionPerformed(ActionEvent evt) {
 		if(JOptionPane.showConfirmDialog(null, "El usuario abandonara el chat", "Roseindia.net", JOptionPane.OK_CANCEL_OPTION) == 0){
 				          JOptionPane.showMessageDialog(null, "Gracias por usar ChatPro2010",
