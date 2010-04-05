@@ -6,6 +6,7 @@ public class Sesion {
 	private XMPPConnection conexion;
 	private String servidor;
 	private Usuario usuario;
+	private boolean conectado;
 	
 	public Sesion(String ser)
 	{
@@ -14,9 +15,11 @@ public class Sesion {
 		try {
 			conexion.connect();
 			System.out.println("Conectado al servidor");
+			conectado = true;
 
 		} catch (XMPPException e) {
 			// TODO Auto-generated catch block
+			conectado = false;
 			e.printStackTrace();
 		}
 	}
@@ -73,6 +76,14 @@ public class Sesion {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public void setConectado(boolean conectado) {
+		this.conectado = conectado;
+	}
+
+	public boolean isConectado() {
+		return conectado;
 	}
 	
 	

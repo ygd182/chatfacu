@@ -12,7 +12,7 @@ public class Usuario {
 	private XMPPConnection conexion;
 	private String user;
 	private String pass;
-	private Conversacion conversacion;
+//	private Conversacion conversacion;
 	//private Chat chat;
 	//private Vector<contacto> vectorContactos;
 	//private Roster roster;
@@ -41,6 +41,7 @@ public usuario(conexion conexion,String user, String pass){
 	conversacion = new conversacion(this,chat);//cada vez que habra una ventana con un nuevo contacto deberia crearse este nuevo chat, ahora lo puse en el constructor
    }
 */
+	/*
 public void loguin(){
 		try {
 				conexion.login(user, pass);
@@ -51,7 +52,7 @@ public void loguin(){
 }
 public void logout(){
 	conexion.disconnect();
-}
+}*/
 public String getUserMail(){
 	return user;
 }

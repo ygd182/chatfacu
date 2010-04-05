@@ -17,7 +17,12 @@ public class frm_servidor extends JPanel {
     private boolean servidor = false;
     private static JDialog d1;
     private SwingApp s1;
+    private JMenuItem servidorItem;
     JLabel jlbPicture;
+    private boolean servidorActivo;
+    private frm_servidor a;
+    private Sesion sesion;
+    private login nuevo_user;
     RadioListener myListener = null;
     public frm_servidor() {
      	// Create the radio buttons and assign Keyboard shortcuts using Mnemonics
@@ -169,20 +174,50 @@ public class frm_servidor extends JPanel {
     private void jButtonconectarActionPerformed(ActionEvent evt) {
 
     	if(servidor){server = fieldservidor.getText();}
-    	System.out.println(server);
-		Sesion sesion = new Sesion(server);
-		JOptionPane.showMessageDialog(d1, "Conexion Realizada con Exito!!", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-		d1.dispose();
+    	sesion = new Sesion(server);
+    	if(sesion.isConectado()){
+    		JOptionPane.showMessageDialog(d1, "Conexion Realizada con Exito!!", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+    		d1.dispose();
+    		servidorActivo =  true;
+    		
+		}else{
+			JOptionPane.showMessageDialog(d1, "El servidor no puede responder a su solicitud..", "Error", JOptionPane.ERROR_MESSAGE);
+			servidorActivo = false;
+		}
+		
+		
+		
+	//	sesion = frm_servidor.getSesion();
+		// System.out.println("sesion4: "+sesion);
+	//	 nuevo_user =  new login(sesion);									 
+	//	 nuevo_user.show();
+	//	nuevo_user = new login(sesion);
+	//	nuevo_user.show();
+	//	d1.remove(a);
+	//	d1.add(nuevo_user);
     }
     
     
     public void nuevo(){
-          frm_servidor a = new frm_servidor();
+      //    a = new frm_servidor();
+ //   	  nuevo_user = new login(sesion);
+          this.setVisible(true);          
 	 	  d1 = new JDialog();
-		  d1.add(a);
+	 	  d1.add(this);
+	//	  d1.add(nuevo_user);
 	 	  d1.setSize(486, 262);
 		  d1.setTitle("Servidor");
-	      d1.show();
+	      d1.show(true);
     }
+    public Sesion getSesion(){
+    	System.out.print("sesion: "+sesion);
+    	return sesion;
+    }
+	public void setServidorActivo(boolean servidorActivo) {
+		this.servidorActivo = servidorActivo;
+	}
+	public boolean isServidorActivo() {
+		return servidorActivo;
+	}
 }
 
