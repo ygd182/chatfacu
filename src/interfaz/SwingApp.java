@@ -176,7 +176,7 @@ public class SwingApp extends javax.swing.JFrame {
     	return d1;
     }
 	private void newFileMenuItemActionPerformed(ActionEvent evt) {
-		
+		////
 		
 	//	  JPanel panel = new JPanel(new FlowLayout());
 	   //   panel.add(okButton);
