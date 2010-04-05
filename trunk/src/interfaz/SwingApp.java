@@ -203,12 +203,12 @@ public class SwingApp extends javax.swing.JFrame {
     }
 	
 	private void logoutItemActionPerformed(ActionEvent evt) {
-	//	if(JOptionPane.showConfirmDialog(null, "El usuario: " ++ " abandonara el chat", "Roseindia.net", JOptionPane.OK_CANCEL_OPTION) == 0){
-	//			          JOptionPane.showMessageDialog(null, "Gracias por usar ChatPro2010",
-	//			 "Confirmacion", 1);
+		if(JOptionPane.showConfirmDialog(null, "El usuario abandonara el chat", "Roseindia.net", JOptionPane.OK_CANCEL_OPTION) == 0){
+				          JOptionPane.showMessageDialog(null, "Gracias por usar ChatPro2010",
+				 "Confirmacion", 1);
 				        
 		sesion.salir();
-		//}
+		}
 	}
     private void iniciar_Itemns(){
     //	loginItem.setEnabled(false);
